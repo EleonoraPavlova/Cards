@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { Button } from './'
 
 const meta = {
@@ -11,6 +10,9 @@ const meta = {
       options: ['primary', 'secondary'],
       control: { type: 'radio' },
     },
+    fullWidth: {
+      control: { type: 'boolean' },
+    },
   },
 } satisfies Meta<typeof Button>
 
@@ -19,6 +21,7 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
+    as: 'button',
     variant: 'primary',
     children: 'Primary Button',
     disabled: false,
@@ -27,6 +30,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
+    as: 'button',
     variant: 'secondary',
     children: 'Secondary Button',
     disabled: false,
@@ -35,6 +39,7 @@ export const Secondary: Story = {
 
 export const FullWidth: Story = {
   args: {
+    as: 'button',
     variant: 'primary',
     children: 'Full Width Primary Button',
     disabled: false,
